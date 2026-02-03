@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+
+<h2>toString()</h2>
+
+<p>The toString() method returns an array as a comma separated string:</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo3"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = "The type of fruits array is " + 
+typeof(fruits) 
+document.getElementById("demo1").innerHTML = "After using the toString () method type becomes " + 
+typeof(fruits.toString());
+
+document.getElementById("demo3").innerHTML = "After using the toString () method type becomes " + 
+fruits.toString();
+
+console.log(fruits.toString());
+return Math.max(...fruits);
+
+var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(function myFunction(value, index, array) {
+  txt = txt + value + "<br>"; 
+});
+document.getElementById("demo").innerHTML = txt;
+
+
+
+
+</script>
+
+</body>
+</html>

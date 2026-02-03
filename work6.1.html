@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const students = [
+  { name: "Akhil", score: 78 },
+  { name: "Neha", score: 92 },
+  { name: "Rahul", score: 65 },
+  { name: "Sneha", score: 34 },
+  { name: "Vijay", score: 55 }
+];
+
+// 1. List all student names
+students.forEach(s => console.log(s.name));
+
+// 2. Students who scored more than 60
+const moreThan60 = students.filter(s => s.score > 60);
+console.log(moreThan60.map(s => s.name));
+
+// 3. Total score
+let total = 0;
+students.forEach(s => total += s.score);
+console.log(total);
+
+// 4. Check if all passed (score > 35)
+const allPassed = students.every(s => s.score > 35);
+console.log(allPassed);
+
+// 5. Check if anyone scored more than 90
+const above90 = students.some(s => s.score > 90);
+console.log(above90);
+
+// 6. Sort by score (high to low)
+students.sort((a, b) => b.score - a.score);
+students.forEach(s => console.log(s.name, s.score));
+
+    </script>
+</body>
+</html>
