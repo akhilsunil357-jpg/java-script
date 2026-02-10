@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" name="" id="inp" oninput="sample()">
+<p id="result"></p>
+
+
+<script>
+
+    function sample(){
+        let inpValue = document.getElementById('inp').value;
+
+        
+        // console.log(inpValue);  
+
+        let validResult = /[a-z][@gmail.com]/.test(inpValue) ;
+
+        if (validResult) {
+            
+            validLogic("valid email", "green")
+
+        }else{
+            validLogic("invalid email", "red")
+        }
+
+
+    }
+
+    function validLogic(msg, clr){
+        document.getElementById("result").innerHTML = msg;
+        document.getElementById("result").style.color = clr;
+    }
+    
+</script>
+
+</body>
+</html>

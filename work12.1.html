@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .confirmation {
+      color: green;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .feedback-display {
+      margin-top: 15px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Feedback Form</h2>
+
+  <form id="feedbackForm">
+    <label>Name:</label><br>
+    <input type="text" id="name" required><br><br>
+
+    <label>Feedback:</label><br>
+    <textarea id="feedback" rows="4" required></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Confirmation Message -->
+  <div id="message" class="confirmation"></div>
+
+  <!-- Display Feedback -->
+  <div 
+    id="displayFeedback" 
+    class="feedback-display"
+    onmouseover="hoverOn()"
+    onmouseout="hoverOff()">
+  </div>
+
+  <script>
+    const form = document.getElementById("feedbackForm");
+    const message = document.getElementById("message");
+    const display = document.getElementById("displayFeedback");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // stop page refresh
+
+      const name = document.getElementById("name").value;
+      const feedback = document.getElementById("feedback").value;
+
+      // Show feedback on same page
+      display.innerHTML = `<strong>Name:</strong> ${name}<br>
+                           <strong>Feedback:</strong> ${feedback}`;
+
+      // Show confirmation message
+      message.innerText = "Thanks for your feedback!";
+
+      // Hide confirmation after 5 seconds
+      setTimeout(() => {
+        message.innerText = "";
+      }, 5000);
+
+      // Clear form
+      form.reset();
+    });
+
+    // Hover effects
+    function hoverOn() {
+      display.style.color = "blue";
+    }
+
+    function hoverOff() {
+      display.style.color = "black";
+    }
+  </script>
+
+</body>
+</html>

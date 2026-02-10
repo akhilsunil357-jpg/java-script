@@ -1,2 +1,3 @@
 
-console.log([2, 3, 3]);
+let x = parseInt('101', 2)
+console.log(x);
