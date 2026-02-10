@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form id="myForm">
+  <input type="text" id="textBox">
+  <button type="submit">Submit</button>
+</form>
+
+<p id="para"></p>
+
+<script>
+  const form = document.getElementById("myForm");
+  const textBox = document.getElementById("textBox");
+  const para = document.getElementById("para");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();      // stop page reload
+    para.innerText = textBox.value;
+    para.style.color = "blue";
+  });
+
+  para.onmouseover = function () {
+    para.style.color = "green";
+  };
+
+  para.onmouseout = function () {
+    para.style.color = "blue";
+  };
+</script>
+
+</body>
+</html>
