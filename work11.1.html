@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>User Class Example</h2>
+
+<script>
+  // 1. Create User class
+  class User {
+    constructor(name, age, email) {
+      this.name = name;
+      this.age = age;
+      this.email = email;
+    }
+
+    // 2. Getter for name
+    getName() {
+      return this.name;
+    }
+
+    // 2. Getter for age
+    getAge() {
+      return this.age;
+    }
+
+    // 3. Setter for email (validation)
+    setEmail(newEmail) {
+      if (newEmail.includes("@")) {
+        this.email = newEmail;
+        console.log("Email updated successfully");
+      } else {
+        console.log("Invalid email format");
+      }
+    }
+
+    // Extra: getter for email (to display)
+    getEmail() {
+      return this.email;
+    }
+  }
+
+  // 4. Create object from class
+  const user1 = new User("Akhil", 26, "akhil@gmail.com");
+
+  // Try updating email (wrong format)
+  user1.setEmail("akhilgmail.com");
+
+  // Try updating email (correct format)
+  user1.setEmail("akhil@company.com");
+
+  // 5. Print user details using getters
+  console.log("Name:", user1.getName());
+  console.log("Age:", user1.getAge());
+  console.log("Email:", user1.getEmail());
+
+</script>
+
+</body>
+</html>
