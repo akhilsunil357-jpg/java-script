@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let book1 = {
+            Name : "Wings of fire",
+            Author: "Apj",
+            Date : "22/05/2005",
+
+             get_summery: function(){
+            return `The book named ${this.Name} writtwn by ${this.Author} and published on ${this.Date}`
+        }
+
+        }
+
+
+
+        let book2 = {
+            Name : "Half  Girlfriend",
+            Author: "Chetan Bagath",
+            Date : "02/05/2015",
+
+             get_summery: function(){
+            return `The book named ${this.Name} writtwn by ${this.Author} and published on ${this.Date}`
+        }
+
+        }
+
+
+  
+        function booksummery(detail){
+            console.log(detail.get_summery());
+            
+        }
+
+        booksummery(book1)
+
+
+
+    </script>
+</body>
+</html>
