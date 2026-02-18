@@ -1,13 +1,47 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
+    <script>
+        let contact1 = {
+            Name : "Jhon",
+            Email: "sbscjs@gmail.com",
+            phone: 5841236974,
 
-<h2>JavaScript Objects</h2>
+             get_summery: function(){
+            return `His name is ${this.Name} whose gamil is ${this.Email} contact ${this.phone}`
+        }
 
-<script>
-let person = { name: 'Kevin', age: 20 };
-console.log(typeof person); 
-</script>
+        }
+
+
+
+        let contact2 = {
+            Name : "Simon",
+            Email: "simon@gmail.com",
+            phone: 8512756395,
+
+             get_summery: function(){
+            return `His name is ${this.Name} whose gamil is ${this.Email} contact ${this.phone}`
+        }
+
+        }
+
+
+  
+        function contactsummary(detail){
+            console.log(detail.get_summery());
+            
+        }
+
+        contactsummary(contact1)
+
+
+
+    </script>
 </body>
 </html>

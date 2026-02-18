@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+    background-image: url(pattern.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+    </style>
+
+</head>
+<body class="vh-100 d-flex justify-content-center align-items-center">
+
+    <div class="container text-center bg-white p-5 rounded shadow" style="max-width: 500px;">
+    <h1>Basic calculator</h1>
+
+    <input type="number" id="num1" placeholder="Number1"><br><br>
+
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select><br><br>
+
+    <input type="number"  id="num2" placeholder="Number2"><br><br>
+
+    <button onclick="calculate()">=</button><br><br>
+
+    <h1 id="result"></h1>
+    </div>
+
+    <script>
+
+        function add(a,b){
+            return a+b;
+        }
+        
+        function sub(a,b){
+            return a-b;
+        }
+
+        function multi(a,b){
+            return a*b;
+        }
+
+        function div(a,b){
+            return a/b;
+        }
+
+        function printResult(value){
+            document.getElementById("result").innerHTML = value;
+        }
+
+
+
+        function calculate(){
+
+        let n1 = parseFloat( document.getElementById("num1").value);
+        let n2 = parseFloat( document.getElementById("num2").value);
+        let op = document.getElementById("operator").value;
+
+        let ans;
+        
+        if(op=="+"){
+            ans = add(n1,n2);
+        }
+        else if(op=="-"){
+            ans = sub(n1,n2);
+        }
+        else if(op=="*"){
+            ans = multi(n1,n2);
+        }
+        else if(op=="/"){
+            ans = div(n1,n2);
+        }
+
+        printResult(ans)
+
+
+    
+        }
+
+
+
+    </script>
+
+
+
+</body>
+</html>
